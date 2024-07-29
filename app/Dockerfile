@@ -13,9 +13,12 @@ RUN npm install
 # Copy rest of application tot he working directory
 COPY . .
 
+# Install `nodemon` globally to watch for file changes
+RUN npm install -g nodemon
+
 # Build application
 RUN npm run build
 
 # Start application
-ENV HOST=0.0.0.0 PORT=80 NODE_ENV=production
-CMD ["npx", "next", "start"]
+ENV HOST=0.0.0.0 PORT=80 NODE_ENV=development
+CMD ["npx", "next", "dev"]
