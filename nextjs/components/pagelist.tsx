@@ -4,7 +4,7 @@ const PagesList = () => {
     const pages = getPages();
 
     return (
-        <div className="p-8 text-white">
+        <div className="p-8 text-white bg-gray-900">
             <ul>
                 {pages.map((page) => (
                     <li key={page} className="mb-2">

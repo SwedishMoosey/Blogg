@@ -1,7 +1,7 @@
-export default function p2() {
+export default function p1() {
     return (
         <div className="">
-            <p>P2</p>
+            <p>P1</p>
         </div>
     );
 };

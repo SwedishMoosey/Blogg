@@ -1,9 +1,7 @@
-import PagesList from "@/components/pagelist.component";
-
-export default function Page() {
+export default function index() {
     return (
-        <main>
-            <PagesList/>
-        </main>
+        <div className="">
+            <p>Main</p>
+        </div>
     );
-}
+};

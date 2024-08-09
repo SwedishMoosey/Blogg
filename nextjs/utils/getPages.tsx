@@ -2,21 +2,21 @@ import fs from 'fs';
 import path from 'path';
 
 export function getPages() {
-    const pagesDir = path.join(process.cwd(), 'app/blog_posts');
-    let pageFiles: string[] = [];
+    const blogPostDir = path.join(process.cwd(), 'app/blog_posts');
+    let blogPosts: string[] = [];
 
     try {
-        pageFiles = fs.readdirSync(pagesDir);
+        blogPosts = fs.readdirSync(blogPostDir);
     } catch (error) {
-        console.error('Error reading pages directory:', error);
+        console.error('Error reading blog posts directory:', error);
         return [];
     }
 
-    const pages = pageFiles.filter((file) => {
-        const isDirectory = fs.lstatSync(path.join(pagesDir, file)).isDirectory();
+    blogPosts = blogPosts.filter((blogPost) => {
+        const isDirectory = fs.lstatSync(path.join(blogPostDir, blogPost)).isDirectory();
 
         return isDirectory;
     });
 
-    return pages.map((page) => page.replace('-', ' ').replace('-', ' ').replace('_', '/'));
+    return blogPosts.map((blogPost) => blogPost.replace('-', ' ').replace('-', ' ').replace('_', '/'));
 }
